@@ -1,0 +1,25 @@
+{
+  "name": "devreview-backend",
+  "version": "3.1.0",
+  "description": "DevReview API - Code review service using Qwen AI",
+  "type": "module",
+  "main": "review.js",
+  "scripts": {
+    "start": "node review.js",
+    "dev": "node --watch review.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^7.1.5"
+  },
+  "devDependencies": {
+    "@vercel/node": "^5.0.0"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "keywords": ["code-review", "ai", "qwen", "vercel", "express"],
+  "author": "DevReview Team",
+  "license": "MIT"
+}
