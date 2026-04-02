@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "review.js",
+      "use": "@vercel/node",
+      "config": {
+        "runtime": "nodejs24.x"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/review",
+      "dest": "/review.js"
+    },
+    {
+      "src": "/api/cache/stats",
+      "dest": "/review.js"
+    },
+    {
+      "src": "/health",
+      "dest": "/review.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/review.js"
+    }
+  ],
+  "env": {
+    "QWEN_API_KEY": "@qwen_api_key",
+    "FRONTEND_ORIGIN": "@frontend_origin",
+    "QWEN_MODEL": "qwen-plus"
+  },
+  "functions": {
+    "review.js": {
+      "maxDuration": 30,
+      "runtime": "nodejs24.x"
+    }
+  }
+}
